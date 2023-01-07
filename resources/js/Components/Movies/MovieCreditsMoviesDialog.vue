@@ -171,7 +171,7 @@
                             icon="mdi:mdi-check-circle"
                           ></v-icon>
                         </div>
-                        <v-img :src="`storage/${movie?.poster_path}`"></v-img>
+                        <v-img :src="`${movie?.poster_path}`"></v-img>
                       </v-card>
 
                       <!-- -------------------- -->
@@ -193,7 +193,7 @@
                             icon="mdi:mdi-check-circle"
                           ></v-icon>
                         </div>
-                        <v-img :src="`storage/${movie?.poster_path}`"></v-img>
+                        <v-img :src="`${movie?.poster_path}`"></v-img>
                       </v-card>
                     </v-col>
                   </v-row>
