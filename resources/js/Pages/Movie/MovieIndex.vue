@@ -80,7 +80,7 @@
                 ></v-btn>
               </div>
             </v-overlay>
-            <v-img :src="`/posters/${movie.paths.poster_grid}`"></v-img>
+            <v-img :src="`storage/posters/${movie.paths.poster_grid}`"></v-img>
           </v-card>
         </v-hover>
       </v-col>
@@ -143,7 +143,7 @@
           <template v-slot:prepend>
             <v-avatar
               :key="item.id"
-              :image="`/posters/${item.paths.poster_grid}`"
+              :image="`storage/posters/${item.paths.poster_grid}`"
               rounded="0"
               size="79"
               style="width: 60px"
