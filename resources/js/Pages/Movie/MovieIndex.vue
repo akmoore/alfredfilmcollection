@@ -177,8 +177,9 @@
 </template>
 
 <script>
+import {defineAsyncComponent} from 'vue'
 import Layout from "@/Pages/Layout/Layout.vue";
-import MovieActiveDialog from "@/Components/Movies/MovieActiveDialog.vue";
+// import MovieActiveDialog from "@/Components/Movies/MovieActiveDialog.vue";
 import { storeToRefs } from "pinia";
 import { useMovieStore } from "@/Store/MovieStore.js";
 import { useCollectionStore } from "@/Store/CollectionStore.js";
@@ -190,7 +191,9 @@ export default {
   layout: Layout,
 
   components: {
-    MovieActiveDialog,
+    MovieActiveDialog: defineAsyncComponent(() =>
+      import('@/Components/Movies/MovieActiveDialog.vue')
+    )
   },
 
   created() {

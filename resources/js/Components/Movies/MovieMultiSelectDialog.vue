@@ -199,21 +199,26 @@
 </template>
 
 <script>
+import {defineAsyncComponent} from 'vue';
 import { useDisplay } from "vuetify";
 import { storeToRefs } from "pinia";
 import { useForm } from "@inertiajs/inertia-vue3";
 import { useBoutiqueStore } from "@/Store/BoutiqueStore.js";
 import { useMovieStore } from "@/Store/MovieStore.js";
 import { useCollectionStore } from "@/Store/CollectionStore.js";
-import BoutiqueStoreDialog from "@/Components/Boutiques/BoutiqueStoreDialog.vue";
-import CollectionStoreDialog from "@/Components/Collection/CollectionStoreDialog.vue";
+// import BoutiqueStoreDialog from "@/Components/Boutiques/BoutiqueStoreDialog.vue";
+// import CollectionStoreDialog from "@/Components/Collection/CollectionStoreDialog.vue";
 import axios from "axios";
 export default {
   name: "MovieMultiSelectDialog",
 
   components: {
-    BoutiqueStoreDialog,
-    CollectionStoreDialog,
+    BoutiqueStoreDialog: defineAsyncComponent(() =>
+      import('@/Components/Boutiques/BoutiqueStoreDialog.vue')
+    ),
+    CollectionStoreDialog: defineAsyncComponent(() =>
+      import('@/Components/Collection/CollectionStoreDialog.vue')
+    ),
   },
 
   props: {

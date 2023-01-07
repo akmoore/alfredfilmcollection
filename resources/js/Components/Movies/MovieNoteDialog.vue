@@ -144,10 +144,11 @@
 </template>
 
 <script>
+import {defineAsyncComponent} from 'vue';
 import { QuillEditor } from "@vueup/vue-quill";
 import "@vueup/vue-quill/dist/vue-quill.snow.css";
 import "@vueup/vue-quill/dist/vue-quill.bubble.css";
-import MovieNoteCreateDialog from "./MovieNoteCreateDialog.vue";
+// import MovieNoteCreateDialog from "./MovieNoteCreateDialog.vue";
 import { useMovieStore } from "@/Store/MovieStore.js";
 import { useAuthStore } from "@/Store/AuthStore.js";
 import { storeToRefs } from "pinia";
@@ -169,7 +170,9 @@ export default {
 
   components: {
     QuillEditor,
-    MovieNoteCreateDialog,
+    MovieNoteCreateDialog: defineAsyncComponent(() =>
+      import('./MovieNoteCreateDialog.vue')
+    ),
   },
 
   data() {

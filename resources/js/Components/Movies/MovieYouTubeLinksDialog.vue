@@ -73,6 +73,7 @@
 </template>
 
 <script>
+// import {defineAsyncComponent} from 'vue';
 import YouTube from "vue3-youtube";
 import { useDisplay } from "vuetify";
 export default {

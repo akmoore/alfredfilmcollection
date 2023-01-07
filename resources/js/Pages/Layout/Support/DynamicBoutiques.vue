@@ -11,15 +11,18 @@
 </template>
 
 <script>
+import {defineAsyncComponent} from 'vue';
 import { storeToRefs } from "pinia";
 import { useMovieStore } from "@/Store/MovieStore.js";
 import { useBoutiqueStore } from "@/Store/BoutiqueStore.js";
-import StaticBoutiqueIndividual from "./StaticBoutiqueIndividual.vue";
+// import StaticBoutiqueIndividual from "./StaticBoutiqueIndividual.vue";
 export default {
   name: "StaticFormats",
 
   components: {
-    StaticBoutiqueIndividual,
+    StaticBoutiqueIndividual: defineAsyncComponent(() =>
+      import('./StaticBoutiqueIndividual.vue')
+    ),
   },
 
   data() {

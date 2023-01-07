@@ -627,27 +627,40 @@
 </template>
 
 <script>
+import {defineAsyncComponent} from 'vue';
 import genres from "./Support/genres.js";
 import currency from "currency.js";
 import { storeToRefs } from "pinia";
 import { useAuthStore } from "@/Store/AuthStore.js";
 import { useMovieStore } from "@/Store/MovieStore.js";
-import MovieEditDialog from "@/Components/Movies/MovieEditDialog.vue";
-import MovieYouTubeLinksDialog from "@/Components/Movies/MovieYouTubeLinksDialog.vue";
-import MovieCreditsMoviesDialog from "@/Components/Movies/MovieCreditsMoviesDialog.vue";
-import MovieDeleteConfirmationDialog from "@/Components/Movies/MovieDeleteConfirmationDialog.vue";
+// import MovieEditDialog from "@/Components/Movies/MovieEditDialog.vue";
+// import MovieYouTubeLinksDialog from "@/Components/Movies/MovieYouTubeLinksDialog.vue";
+// import MovieCreditsMoviesDialog from "@/Components/Movies/MovieCreditsMoviesDialog.vue";
+// import MovieDeleteConfirmationDialog from "@/Components/Movies/MovieDeleteConfirmationDialog.vue";
 import CollectionShowDialog from "@/Components/Collection/CollectionShowDialog.vue";
 import { useDisplay } from "vuetify";
-import MovieNoteDialog from "@/Components/Movies/MovieNoteDialog.vue";
+// import MovieNoteDialog from "@/Components/Movies/MovieNoteDialog.vue";
 
 export default {
   components: {
-    MovieYouTubeLinksDialog,
-    MovieCreditsMoviesDialog,
-    MovieEditDialog,
-    MovieDeleteConfirmationDialog,
-    CollectionShowDialog,
-    MovieNoteDialog,
+    MovieYouTubeLinksDialog: defineAsyncComponent(() =>
+      import('@/Components/Movies/MovieYouTubeLinksDialog.vue')
+    ),
+    MovieCreditsMoviesDialog: defineAsyncComponent(() =>
+      import('@/Components/Movies/MovieCreditsMoviesDialog.vue')
+    ),
+    MovieEditDialog: defineAsyncComponent(() =>
+      import('@/Components/Movies/MovieEditDialog.vue')
+    ),
+    MovieDeleteConfirmationDialog: defineAsyncComponent(() =>
+      import('@/Components/Movies/MovieDeleteConfirmationDialog.vue')
+    ),
+    CollectionShowDialog: defineAsyncComponent(() =>
+      import('@/Components/Collection/CollectionShowDialog.vue')
+    ),
+    MovieNoteDialog: defineAsyncComponent(() =>
+      import('@/Components/Movies/MovieNoteDialog.vue')
+    ),
   },
 
   created() {},

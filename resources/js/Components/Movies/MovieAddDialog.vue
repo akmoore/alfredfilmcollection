@@ -227,6 +227,7 @@
 </template>
 
 <script>
+import {defineAsyncComponent} from 'vue';
 import intus from "intus";
 import { isRequired, isMin, isNumeric, isIn } from "intus/rules";
 import { storeToRefs } from "pinia";
@@ -234,13 +235,17 @@ import { useMovieStore } from "@/Store/MovieStore.js";
 import { useBoutiqueStore } from "@/Store/BoutiqueStore.js";
 import { useCollectionStore } from "@/Store/CollectionStore.js";
 import { useDisplay } from "vuetify";
-import BoutiqueStoreDialog from "@/Components/Boutiques/BoutiqueStoreDialog.vue";
-import CollectionStoreDialog from "@/Components/Collection/CollectionStoreDialog.vue";
+// import BoutiqueStoreDialog from "@/Components/Boutiques/BoutiqueStoreDialog.vue";
+// import CollectionStoreDialog from "@/Components/Collection/CollectionStoreDialog.vue";
 export default {
   name: "MovieAddDialog",
   components: {
-    BoutiqueStoreDialog,
-    CollectionStoreDialog,
+    BoutiqueStoreDialog: defineAsyncComponent(() =>
+      import('@/Components/Boutiques/BoutiqueStoreDialog.vue')
+    ),
+    CollectionStoreDialog: defineAsyncComponent(() =>
+      import('@/Components/Collection/CollectionStoreDialog.vue')
+    ),
   },
 
   props: {

@@ -210,9 +210,10 @@
 </template>
 
 <script>
+import {defineAsyncComponent} from 'vue';
 import { storeToRefs } from "pinia";
 import { useDisplay } from "vuetify";
-import MovieAddDialog from "./MovieAddDialog.vue";
+// import MovieAddDialog from "./MovieAddDialog.vue";
 import { useMovieStore } from "@/Store/MovieStore.js";
 import { useAuthStore } from "@/Store/AuthStore.js";
 
@@ -220,7 +221,9 @@ export default {
   name: "MovieCreditsMoviesDialog",
 
   components: {
-    MovieAddDialog,
+    MovieAddDialog: defineAsyncComponent(() =>
+      import('./MovieAddDialog.vue')
+    ),
   },
 
   data() {

@@ -137,29 +137,42 @@
 </template>
 
 <script>
+import {defineAsyncComponent} from 'vue';
 import { useDisplay } from "vuetify";
 import { Link } from "@inertiajs/inertia-vue3";
 import { storeToRefs } from "pinia";
 import { useMovieStore } from "@/Store/MovieStore.js";
 import { useBoutiqueStore } from "@/Store/BoutiqueStore.js";
 import { useAuthStore } from "@/Store/AuthStore.js";
-import MovieSearchDialog from "../../Components/Movies/MovieSearchDialog.vue";
-import Auth from "@/Components/Auth/Auth.vue";
+// import MovieSearchDialog from "../../Components/Movies/MovieSearchDialog.vue";
+// import Auth from "@/Components/Auth/Auth.vue";
 import { debounce } from "lodash";
-import DynamicFormats from "@/Pages/Layout/Support/DynamicFormats.vue";
-import StaticFormats from "@/Pages/Layout/Support/StaticFormats.vue";
-import DynamicBoutiques from "./Support/DynamicBoutiques.vue";
-import MovieCountDrawer from "./MovieCountDrawer.vue";
+// import DynamicFormats from "@/Pages/Layout/Support/DynamicFormats.vue";
+// import StaticFormats from "@/Pages/Layout/Support/StaticFormats.vue";
+// import DynamicBoutiques from "./Support/DynamicBoutiques.vue";
+// import MovieCountDrawer from "./MovieCountDrawer.vue";
 
 export default {
   components: {
     Link,
-    MovieSearchDialog,
-    Auth,
-    DynamicFormats,
-    StaticFormats,
-    DynamicBoutiques,
-    MovieCountDrawer,
+    MovieSearchDialog: defineAsyncComponent(() =>
+      import('@/Components/Movies/MovieSearchDialog.vue')
+    ),
+    Auth: defineAsyncComponent(() =>
+      import('@/Components/Auth/Auth.vue')
+    ),
+    DynamicFormats: defineAsyncComponent(() =>
+      import('@/Pages/Layout/Support/DynamicFormats.vue')
+    ),
+    StaticFormats: defineAsyncComponent(() =>
+      import('@/Pages/Layout/Support/StaticFormats.vue')
+    ),
+    DynamicBoutiques: defineAsyncComponent(() =>
+      import('./Support/DynamicBoutiques.vue')
+    ),
+    MovieCountDrawer: defineAsyncComponent(() =>
+      import('./MovieCountDrawer.vue')
+    ),
   },
 
   props: {

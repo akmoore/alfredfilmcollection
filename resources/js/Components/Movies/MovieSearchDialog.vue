@@ -210,20 +210,27 @@
 </template>
 
 <script>
+import {defineAsyncComponent} from 'vue';
 import { storeToRefs } from "pinia";
 import { useMovieStore } from "@/Store/MovieStore.js";
-import MovieAddDialog from "./MovieAddDialog.vue";
-import MovieMultiSelectDialog from "./MovieMultiSelectDialog.vue";
-import MovieManualAddDialog from "./MovieManualAddDialog.vue";
+// import MovieAddDialog from "./MovieAddDialog.vue";
+// import MovieMultiSelectDialog from "./MovieMultiSelectDialog.vue";
+// import MovieManualAddDialog from "./MovieManualAddDialog.vue";
 import { chunk, debounce } from "lodash";
 import { useDisplay } from "vuetify";
 
 export default {
   name: "MovieSearchDialog",
   components: {
-    MovieAddDialog,
-    MovieMultiSelectDialog,
-    MovieManualAddDialog,
+    MovieAddDialog: defineAsyncComponent(() =>
+      import('./MovieAddDialog.vue')
+    ),
+    MovieMultiSelectDialog: defineAsyncComponent(() =>
+      import('./MovieMultiSelectDialog.vue')
+    ),
+    MovieManualAddDialog: defineAsyncComponent(() =>
+      import('./MovieManualAddDialog.vue')
+    ),
   },
 
   data() {
