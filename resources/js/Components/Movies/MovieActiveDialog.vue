@@ -121,7 +121,7 @@
                 <v-icon size="x-large" icon="mdi:mdi-video-4k-box"></v-icon>
               </div>
               <v-img
-                :src="`/posters/${this.activeMovie['paths']['poster_large']}`"
+                :src="`storage/posters/${this.activeMovie['paths']['poster_large']}`"
                 :lazy-src="`/posters/${this.activeMovie['paths']['poster_large']}`"
               >
                 <template v-slot:placeholder>
@@ -146,7 +146,7 @@
             <v-row v-if="!activeMovie.manual">
               <v-col>
                 <v-img
-                  :src="`/backdrops/${activeMovie['paths']['backdrop']}`"
+                  :src="`storage/backdrops/${activeMovie['paths']['backdrop']}`"
                   :lazy-src="`/backdrops/${activeMovie['paths']['backdrop']}`"
                 >
                   <v-toolbar density="compact" color="rgba(0, 0, 0, 0)">
@@ -467,7 +467,7 @@
                         <v-avatar size="28" rounded="0">
                           <v-img
                             v-if="activeMovie.boutique.image"
-                            :src="`/boutiques/${activeMovie.boutique.image}`"
+                            :src="`storage/boutiques/${activeMovie.boutique.image}`"
                           ></v-img>
                           <v-icon v-else color="white">mdi-folder</v-icon>
                         </v-avatar>
@@ -583,7 +583,7 @@
                         <v-img
                           v-else
                           cover
-                          :src="`/credits/${member.profile_pic}`"
+                          :src="`storage/credits/${member.profile_pic}`"
                         ></v-img>
                       </v-avatar>
                     </template>
@@ -607,7 +607,7 @@
                         <v-img
                           v-else
                           cover
-                          :src="`/credits/${actor.profile_pic}`"
+                          :src="`storage/credits/${actor.profile_pic}`"
                         ></v-img>
                       </v-avatar>
                     </template>

@@ -50,7 +50,7 @@
             :key="movie.id"
           >
             <v-card @click="setMovie(movie)" :loading="movie.loading">
-              <v-img :src="`/posters/${movie.paths.poster_grid}`"></v-img>
+              <v-img :src="`storage/posters/${movie.paths.poster_grid}`"></v-img>
             </v-card>
           </v-col>
         </v-row>

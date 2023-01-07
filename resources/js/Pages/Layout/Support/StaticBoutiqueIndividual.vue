@@ -17,7 +17,7 @@
 
     <template v-slot:prepend>
         <v-avatar rounded="0">
-            <v-img v-if="image" :src="`/boutiques/${image}`"></v-img>
+            <v-img v-if="image" :src="`storage/boutiques/${image}`"></v-img>
             <v-icon v-else icon="mdi-filmstrip"></v-icon>
         </v-avatar>
     </template>

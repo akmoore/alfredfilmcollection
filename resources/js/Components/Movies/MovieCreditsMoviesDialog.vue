@@ -11,7 +11,7 @@
           <v-avatar class="mr-1" v-if="smAndDown" color="grey-lighten-1">
             <v-img
               v-if="activeCredit.profile_pic"
-              :src="`/credits/${activeCredit.profile_pic}`"
+              :src="`storage/credits/${activeCredit.profile_pic}`"
               cover
             ></v-img>
             <v-icon color="grey-darken-1" v-else icon="mdi-account"></v-icon>
@@ -53,7 +53,7 @@
               <v-card variant="tonal">
                 <v-img
                   v-if="activeCredit.profile_pic"
-                  :src="`/credits/${activeCredit.profile_pic}`"
+                  :src="`storage/credits/${activeCredit.profile_pic}`"
                 ></v-img>
 
                 <v-list>
@@ -132,7 +132,7 @@
                           <v-icon icon="mdi:mdi-eye-outline"></v-icon>
                         </div>
                         <v-img
-                          :src="`/posters/${movie?.paths.poster_grid}`"
+                          :src="`storage/posters/${movie?.paths.poster_grid}`"
                         ></v-img>
                       </v-card>
                     </v-col>
@@ -171,7 +171,7 @@
                             icon="mdi:mdi-check-circle"
                           ></v-icon>
                         </div>
-                        <v-img :src="`${movie?.poster_path}`"></v-img>
+                        <v-img :src="`storage/${movie?.poster_path}`"></v-img>
                       </v-card>
 
                       <!-- -------------------- -->
@@ -193,7 +193,7 @@
                             icon="mdi:mdi-check-circle"
                           ></v-icon>
                         </div>
-                        <v-img :src="`${movie?.poster_path}`"></v-img>
+                        <v-img :src="`storage/${movie?.poster_path}`"></v-img>
                       </v-card>
                     </v-col>
                   </v-row>
