@@ -122,7 +122,7 @@
               </div>
               <v-img
                 :src="`storage/posters/${this.activeMovie['paths']['poster_large']}`"
-                :lazy-src="`/posters/${this.activeMovie['paths']['poster_large']}`"
+                :lazy-src="`storage/posters/${this.activeMovie['paths']['poster_large']}`"
               >
                 <template v-slot:placeholder>
                   <div class="d-flex align-center justify-center fill-height">
@@ -147,7 +147,7 @@
               <v-col>
                 <v-img
                   :src="`storage/backdrops/${activeMovie['paths']['backdrop']}`"
-                  :lazy-src="`/backdrops/${activeMovie['paths']['backdrop']}`"
+                  :lazy-src="`storage/backdrops/${activeMovie['paths']['backdrop']}`"
                 >
                   <v-toolbar density="compact" color="rgba(0, 0, 0, 0)">
                     <v-spacer></v-spacer>
