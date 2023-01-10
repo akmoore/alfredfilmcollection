@@ -64,13 +64,13 @@ class MovieController extends Controller
     public function movies_count()
     {
         return [
-            'total_count' => DB::table('movies')->where('publicly_visible', 1)->where('wish_listed', 0)->count(),
-            '4k_disc_count' => DB::table('movies')->where('publicly_visible', 1)->where('wish_listed', 0)->where('quality', 2160)->where('medium', 'disc')->count(),
-            '4k_digital_count' => DB::table('movies')->where('publicly_visible', 1)->where('wish_listed', 0)->where('quality', 2160)->where('medium', 'digital')->count(),
-            'hd_disc_count' => DB::table('movies')->where('publicly_visible', 1)->where('wish_listed', 0)->whereIn('quality', [1080, 720, 540])->where('medium', 'disc')->count(),
-            'hd_digital_count' => DB::table('movies')->where('publicly_visible', 1)->where('wish_listed', 0)->whereIn('quality', [1080, 720, 540])->where('medium', 'digital')->count(),
-            'sd_disc_count' => DB::table('movies')->where('publicly_visible', 1)->where('wish_listed', 0)->where('quality', 480)->where('medium', 'disc')->count(),
-            'sd_digital_count' => DB::table('movies')->where('publicly_visible', 1)->where('wish_listed', 0)->where('quality', 480)->where('medium', 'digital')->count(),
+            'total_count' => DB::table('movies')->where('deleted_at', null)->where('publicly_visible', 1)->where('wish_listed', 0)->count(),
+            '4k_disc_count' => DB::table('movies')->where('deleted_at', null)->where('publicly_visible', 1)->where('wish_listed', 0)->where('quality', 2160)->where('medium', 'disc')->count(),
+            '4k_digital_count' => DB::table('movies')->where('deleted_at', null)->where('publicly_visible', 1)->where('wish_listed', 0)->where('quality', 2160)->where('medium', 'digital')->count(),
+            'hd_disc_count' => DB::table('movies')->where('deleted_at', null)->where('publicly_visible', 1)->where('wish_listed', 0)->whereIn('quality', [1080, 720, 540])->where('medium', 'disc')->count(),
+            'hd_digital_count' => DB::table('movies')->where('deleted_at', null)->where('publicly_visible', 1)->where('wish_listed', 0)->whereIn('quality', [1080, 720, 540])->where('medium', 'digital')->count(),
+            'sd_disc_count' => DB::table('movies')->where('deleted_at', null)->where('publicly_visible', 1)->where('wish_listed', 0)->where('quality', 480)->where('medium', 'disc')->count(),
+            'sd_digital_count' => DB::table('movies')->where('deleted_at', null)->where('publicly_visible', 1)->where('wish_listed', 0)->where('quality', 480)->where('medium', 'digital')->count(),
         ];
     }
 
